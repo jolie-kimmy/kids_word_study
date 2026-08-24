@@ -1,72 +1,50 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ff8d5c" />
-  <title>My Bible Word Study</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="첫 화면으로"><span class="logo">✦</span><span>Word <b>Buddy</b></span></a>
-    <div class="progress-wrap" aria-label="학습 진행률">
-      <div class="progress-label"><span>오늘의 공부</span><strong id="progressText">0 / 15</strong></div>
-      <div class="progress-track"><span id="progressBar"></span></div>
-    </div>
-    <button class="parent-btn" id="resetBtn">↻ 다시 하기</button>
-  </header>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bible Study Self Test</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eee9df;color:#242424;font-family:"Comic Sans MS","Trebuchet MS",Arial,sans-serif}.toolbar{position:sticky;top:0;z-index:5;padding:12px;text-align:center;background:#255d4a;color:white}.toolbar button{margin-left:14px;border:0;border-radius:8px;padding:9px 18px;background:#ffd66b;font-weight:bold;cursor:pointer}.page{width:210mm;min-height:297mm;margin:18px auto;padding:18mm 15mm;background:#fff;box-shadow:0 3px 18px #aaa;position:relative}.page-no{position:absolute;right:14mm;bottom:10mm;border:2px solid #d76060;border-radius:50%;padding:4px 9px;font-weight:bold}.header{text-align:center;color:#b42c5a;font-size:30px;font-weight:bold;margin-bottom:20px}.instruction{color:#3173a9;font-size:23px;font-weight:bold;margin:15px 0}.student{display:flex;justify-content:flex-end;gap:18px;margin-bottom:20px}.student input{width:130px;border:0;border-bottom:1px solid #555;font-size:17px}.question{border:1.5px solid #555;padding:14px 16px;font-size:21px;line-height:1.7}.question+.question{border-top:0}.qnum{color:#b8862c;font-size:13px;vertical-align:top;margin-right:5px}.blank{width:210px;border:0;border-bottom:2px solid #4a90c2;font:inherit;text-align:center;color:#295c92;background:#f9fcff}.choices{float:right;width:135px;margin:-14px -16px -14px 12px;padding:7px 12px;border-left:1px solid #777;background:#fff6dc;font-size:18px;line-height:1.35}.choice-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.choice-row label{border:1.5px solid #aaa;border-radius:7px;padding:5px 13px;font-size:17px;cursor:pointer}.matching{display:grid;grid-template-columns:1fr 220px 1fr;gap:14px;align-items:stretch}.word-list{display:flex;flex-direction:column;justify-content:space-around;font-size:24px}.word-list.left{text-align:right}.pictures{display:grid;gap:10px}.pic{height:135px;border:2px solid #333;display:flex;align-items:center;justify-content:center;font-size:65px;background:#f8fbef}.match-select{font:inherit;padding:4px;border:1px solid #aaa;border-radius:6px}.wordbank{float:right;width:150px;background:#fff3cf;border-left:1px solid #555;padding:8px;font-size:20px;line-height:1.35}.fill-row{border:1.5px solid #555;border-bottom:0;padding:20px 14px;font-size:21px;min-height:93px}.fill-row:last-child{border-bottom:1.5px solid #555}.scene{display:flex;gap:15px;margin-bottom:18px}.scene div{flex:1;min-height:160px;border:2px solid #333;background:#f7f1df;display:grid;place-items:center;text-align:center;font-size:21px;padding:12px}.big-emoji{font-size:60px;display:block}.score{margin-top:28px;text-align:center;font-size:22px;color:#24734d;font-weight:bold}.note{color:#777;font-size:14px;text-align:center;margin-top:15px}@media(max-width:850px){.page{width:100%;min-height:auto;margin:0 0 12px;padding:25px 16px}.matching{grid-template-columns:1fr 120px 1fr}.pic{height:100px}.word-list{font-size:18px}.choices,.wordbank{float:none;width:auto;margin:8px 0;border:0}.blank{max-width:48%}}@media print{body{background:#fff}.toolbar{display:none}.page{margin:0;box-shadow:none;page-break-after:always}.page:last-child{page-break-after:auto}}
+</style>
+</head><body>
+<div class="toolbar">Bible Study Self Test <button onclick="window.print()">🖨 Print / PDF</button><button onclick="location.reload()">↻ Start Over</button></div>
 
-  <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">BIBLE · LESSON 2</p>
-        <h1>하나님 말씀을<br><em>재미있게 배워요!</em></h1>
-        <p class="hero-copy">그림을 보고 단어를 익힌 뒤, 빈칸 문제를 풀어 보세요.</p>
-        <button class="primary" id="startBtn">공부 시작하기 <span>→</span></button>
-      </div>
-      <div class="hero-art" aria-label="책을 읽는 어린이 그림">
-        <span class="spark s1">✦</span><span class="spark s2">✦</span>
-        <div class="sun">☀</div><div class="kid">👦🏻</div><div class="book">📖</div>
-        <div class="cloud c1"></div><div class="cloud c2"></div>
-      </div>
-    </section>
+<section class="page">
+<div class="student">Name <input> Date <input></div><div class="header">Self Test</div><div class="instruction">Put the right word on the blank.</div>
+<div class="question"><span class="qnum">(1)</span> God lives in <input class="blank" data-answer="Heaven">.<span class="choices">Leaven<br>Heaven<br>Clouds</span></div>
+<div class="question"><span class="qnum">(2)</span> Sins are the <input class="blank" data-answer="bad"> things we do.<span class="choices">bad<br>good<br>right</span></div>
+<div class="question"><span class="qnum">(3)</span> We can live in <input class="blank" data-answer="Heaven">.<span class="choices">Leaven<br>Hearts<br>Heaven</span></div>
+<div class="question"><span class="qnum">(4)</span> We must have <input class="blank" data-answer="Jesus"> in our hearts.<span class="choices">Father<br>Mother<br>Jesus</span></div>
+<div class="question"><span class="qnum">(5)</span> Jesus died on a <input class="blank" data-answer="cross">.<span class="choices">crome<br>cross<br>toss</span></div>
+<p class="note">Write one word from the box on each blank.</p><span class="page-no">24</span></section>
 
-    <nav class="tabs" aria-label="학습 단계">
-      <button class="tab active" data-view="words"><span>1</span> 단어 익히기</button>
-      <button class="tab" data-view="sentences"><span>2</span> 문장 연습</button>
-      <button class="tab" data-view="test"><span>3</span> 실전 테스트</button>
-    </nav>
+<section class="page">
+<div class="instruction">Draw a line between the word and the picture.</div>
+<div class="matching"><div class="word-list left"><label>cross <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label><label>Heaven <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label><label>earth <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label></div><div class="pictures"><div class="pic">🏰 <small>①</small></div><div class="pic">✝️ <small>②</small></div><div class="pic">🌍 <small>③</small></div></div><div class="word-list"><span>(6) cross</span><span>(7) Heaven</span><span>(8) earth</span></div></div>
+<hr style="border:3px solid #e4a83d;margin:28px 0">
+<div class="matching"><div class="word-list left"><label>pray <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label><label>sin <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label><label>heart <select class="match-select"><option>—</option><option>1</option><option>2</option><option>3</option></select></label></div><div class="pictures"><div class="pic">💭🚫 <small>①</small></div><div class="pic">❤️ <small>②</small></div><div class="pic">🙏 <small>③</small></div></div><div class="word-list"><span>(9) pray</span><span>(10) sin</span><span>(11) heart</span></div></div>
+<div class="instruction">Put the right word on the blank.</div>
+<div class="fill-row"><span class="qnum">(12)</span> I must ask <input class="blank" data-answer="Jesus"> to take away sin.<span class="wordbank">Jesus<br>Mother<br>Father</span></div>
+<div class="fill-row"><span class="qnum">(13)</span> I ask Jesus to live in my <input class="blank" data-answer="heart">.<span class="wordbank">Heaven<br>heart<br>ear</span></div>
+<div class="fill-row"><span class="qnum">(14)</span> We read God’s <input class="blank" data-answer="Book">.<span class="wordbank">Book<br>Look<br>Took</span></div><span class="page-no">25</span></section>
 
-    <section class="view active" id="words">
-      <div class="section-heading">
-        <div><p class="eyebrow">STEP 1</p><h2>그림으로 단어를 익혀요</h2><p>카드를 눌러 영어 발음을 들어 보세요.</p></div>
-        <div class="tip">🔊 소리를 켜고 따라 읽어요!</div>
-      </div>
-      <div class="word-grid" id="wordGrid"></div>
-      <div class="next-row"><button class="primary next" data-next="sentences">문장 연습하러 가기 <span>→</span></button></div>
-    </section>
+<section class="page">
+<div class="scene"><div><span><b>“You are the best dad!”</b><span class="big-emoji">👨‍👦</span></span></div><div><span><span class="big-emoji">⚾❤️</span>We love others.</span></div></div>
+<div class="instruction">Put the right word on the blank.</div>
+<div class="fill-row"><span class="qnum">(15)</span> We <input class="blank" data-answer="sing"> about God.<span class="wordbank">sing<br>ring<br>sink</span></div>
+<div class="fill-row"><span class="qnum">(16)</span> We pray and <input class="blank" data-answer="work"> for God.<span class="wordbank">word<br>worm<br>work</span></div>
+<div class="fill-row"><span class="qnum">(17)</span> We <input class="blank" data-answer="thank"> God for giving things.<span class="wordbank">than<br>thank<br>think</span></div>
+<div class="fill-row"><span class="qnum">(18)</span> We tell <input class="blank" data-answer="others"> about Jesus.<span class="wordbank">obey<br>others<br>over</span></div>
+<p class="instruction" style="margin-top:45px">Go to the next page.</p><span class="page-no">26</span></section>
 
-    <section class="view" id="sentences">
-      <div class="section-heading">
-        <div><p class="eyebrow">STEP 2</p><h2>알맞은 단어를 골라요</h2><p>빈칸을 누르고 정답을 골라 보세요.</p></div>
-        <div class="score-pill">⭐ 맞힌 문제 <b id="practiceScore">0</b> / 6</div>
-      </div>
-      <div class="question-list" id="practiceList"></div>
-      <div class="next-row"><button class="primary next" data-next="test">실전 테스트 도전! <span>→</span></button></div>
-    </section>
-
-    <section class="view" id="test">
-      <div class="test-head">
-        <div><p class="eyebrow">STEP 3 · SELF TEST</p><h2>혼자서 풀어 볼까요?</h2><p>정답 하나를 골라 주세요. 다 풀면 채점할 수 있어요!</p></div>
-        <div class="test-badge">🏆<strong id="testCount">0 / 5</strong><span>푼 문제</span></div>
-      </div>
-      <form id="testForm" class="test-card"></form>
-      <div class="submit-row"><button type="button" class="primary" id="gradeBtn">정답 확인하기 <span>✓</span></button></div>
-      <div class="result" id="result" aria-live="polite"></div>
-    </section>
-  </main>
-  <footer><span class="logo small">✦</span><b>Word Buddy</b><span>오늘도 한 걸음 성장했어요!</span></footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<section class="page">
+<div class="instruction">Draw a line between the word and the picture.</div>
+<div class="matching"><div class="word-list left"><span>give</span><span>(20) read</span><span>take</span></div><div class="pictures"><div class="pic">🎁</div><div class="pic">🤲🥖</div><div class="pic">📖</div></div><div class="word-list"><span>(22) school</span><span>(23) thing</span><span>(24) away</span></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px"><div class="pictures"><div class="pic">🏫</div><div class="pic">🧸</div><div class="pic">✈️</div></div><div class="word-list"><label>school <select class="match-select"><option>—</option><option>🏫</option><option>🧸</option><option>✈️</option></select></label><label>thing <select class="match-select"><option>—</option><option>🏫</option><option>🧸</option><option>✈️</option></select></label><label>away <select class="match-select"><option>—</option><option>🏫</option><option>🧸</option><option>✈️</option></select></label></div></div>
+<div class="instruction">Fill in the blanks.</div>
+<div class="question"><span class="qnum">(25)</span> We <input class="blank" data-answer="serve"> him [the Lord] in sincerity.</div>
+<div class="scene" style="margin-top:22px"><div>Score pages<br>24, 25, 26 and 27.</div><div>Correct mistakes.</div><div>Rescore.</div></div>
+<div class="score"><button onclick="checkAnswers()" style="font:inherit;padding:10px 22px">Check written answers</button><div id="result"></div></div><span class="page-no">27</span></section>
+<script>
+function checkAnswers(){const fields=[...document.querySelectorAll('[data-answer]')];let right=0;fields.forEach(f=>{const ok=f.value.trim().toLowerCase()===f.dataset.answer.toLowerCase();f.style.background=ok?'#e3f7e7':'#ffe4e0';if(ok)right++});document.getElementById('result').textContent=`${right} / ${fields.length} correct`;}
+</script></body></html>
