@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff8d5c" />
+  <title>My Bible Word Study</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="첫 화면으로"><span class="logo">✦</span><span>Word <b>Buddy</b></span></a>
+    <div class="progress-wrap" aria-label="학습 진행률">
+      <div class="progress-label"><span>오늘의 공부</span><strong id="progressText">0 / 15</strong></div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+    </div>
+    <button class="parent-btn" id="resetBtn">↻ 다시 하기</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">BIBLE · LESSON 2</p>
+        <h1>하나님 말씀을<br><em>재미있게 배워요!</em></h1>
+        <p class="hero-copy">그림을 보고 단어를 익힌 뒤, 빈칸 문제를 풀어 보세요.</p>
+        <button class="primary" id="startBtn">공부 시작하기 <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-label="책을 읽는 어린이 그림">
+        <span class="spark s1">✦</span><span class="spark s2">✦</span>
+        <div class="sun">☀</div><div class="kid">👦🏻</div><div class="book">📖</div>
+        <div class="cloud c1"></div><div class="cloud c2"></div>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="학습 단계">
+      <button class="tab active" data-view="words"><span>1</span> 단어 익히기</button>
+      <button class="tab" data-view="sentences"><span>2</span> 문장 연습</button>
+      <button class="tab" data-view="test"><span>3</span> 실전 테스트</button>
+    </nav>
+
+    <section class="view active" id="words">
+      <div class="section-heading">
+        <div><p class="eyebrow">STEP 1</p><h2>그림으로 단어를 익혀요</h2><p>카드를 눌러 영어 발음을 들어 보세요.</p></div>
+        <div class="tip">🔊 소리를 켜고 따라 읽어요!</div>
+      </div>
+      <div class="word-grid" id="wordGrid"></div>
+      <div class="next-row"><button class="primary next" data-next="sentences">문장 연습하러 가기 <span>→</span></button></div>
+    </section>
+
+    <section class="view" id="sentences">
+      <div class="section-heading">
+        <div><p class="eyebrow">STEP 2</p><h2>알맞은 단어를 골라요</h2><p>빈칸을 누르고 정답을 골라 보세요.</p></div>
+        <div class="score-pill">⭐ 맞힌 문제 <b id="practiceScore">0</b> / 6</div>
+      </div>
+      <div class="question-list" id="practiceList"></div>
+      <div class="next-row"><button class="primary next" data-next="test">실전 테스트 도전! <span>→</span></button></div>
+    </section>
+
+    <section class="view" id="test">
+      <div class="test-head">
+        <div><p class="eyebrow">STEP 3 · SELF TEST</p><h2>혼자서 풀어 볼까요?</h2><p>정답 하나를 골라 주세요. 다 풀면 채점할 수 있어요!</p></div>
+        <div class="test-badge">🏆<strong id="testCount">0 / 5</strong><span>푼 문제</span></div>
+      </div>
+      <form id="testForm" class="test-card"></form>
+      <div class="submit-row"><button type="button" class="primary" id="gradeBtn">정답 확인하기 <span>✓</span></button></div>
+      <div class="result" id="result" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer><span class="logo small">✦</span><b>Word Buddy</b><span>오늘도 한 걸음 성장했어요!</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
